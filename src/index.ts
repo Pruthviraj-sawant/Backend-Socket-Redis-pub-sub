@@ -25,15 +25,20 @@ import { WebSocketServer, WebSocket } from "ws";
 const app = express();
 const PORT = 8006;
 
+app.get("/", (req, res) => {
+  res.send("Hello World! This is WebSocket server.");
+});
+
 const httpserver = app.listen(PORT, () => {
   console.log(`HTTP server running on port ${PORT}`);
 });
 
+let user=0;
 // Create a WebSocket server attached to HTTP server
 const wss = new WebSocketServer({ server: httpserver });
 
 wss.on("connection", (ws: WebSocket) => {
-  console.log("New client connected!");
+  console.log("New client connected!",++user);
 
   ws.on("error", console.error);
 

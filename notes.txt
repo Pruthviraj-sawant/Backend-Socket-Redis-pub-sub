@@ -1,0 +1,74 @@
+1.websokcet 
+
+
+websocket is used for persistant communication rather thn http http communacaties via sending the req again and again waithing for res then send res that i got it so their are n no. of http reuwatues for client on server so to avoid that concept of websocket cames in the picture .. 
+websocket does duplex communication when client is connentec it has only one http request to send at the start ..
+
+their are 2 types of communication 
+
+1.synchronious 
+
+in this 
+
+1. http 
+
+2. websockaet (doubt that it is asy or syc )
+
+2. asynchronious
+
+1.messeging queue's like redis 
+
+2.websocket (doubt that it is asy or syc )
+
+3.sever side Envent      
+
+4.pub/sub
+
+microservices:-when their is only one sever it is too dificult for it to handle the no of requstes /services so if that single srver fails it is major fault so microservices came in the picture microservices are nothing but the servers that are connected to main server like pub/sub ,redis,http req this are type of communcation between this servers and this multiple servers handle specific features .
+
+..........................................................................................................
+
+# WebSocket & Microservices Notes
+
+## WebSocket Overview
+
+- **WebSocket** is used for persistent, real-time communication between client and server.
+- Unlike HTTP, which requires multiple requests and responses for ongoing communication, WebSocket establishes a single connection that remains open.
+- This allows for **duplex communication** (both client and server can send messages at any time).
+- WebSocket starts with one HTTP request to establish the connection, then upgrades to a WebSocket protocol for continuous data exchange.
+
+## Communication Types
+
+### 1. Synchronous Communication
+- **HTTP**: Traditional request-response model; client sends a request and waits for the server's response.
+- **WebSocket**: (Note: WebSocket is generally considered asynchronous because both sides can send messages independently.)
+
+### 2. Asynchronous Communication
+- **Message Queues** (e.g., Redis): Used for decoupled, event-driven communication between services.
+- **WebSocket**: Enables real-time, event-driven communication.
+- **Server-Sent Events (SSE)**: Server pushes updates to the client over HTTP.
+
+## Microservices
+
+- **Microservices** architecture divides an application into multiple smaller, independent services.
+- Each service handles a specific feature or functionality.
+- Benefits:
+  - Improved scalability and fault tolerance.
+  - If one service fails, others can continue to operate.
+- Communication between microservices can use:
+  - **HTTP requests**
+  - **Pub/Sub systems**
+  - **Message queues (e.g., Redis)**
+  - **WebSocket**
+
+## Summary
+
+- WebSocket is ideal for real-time, persistent, bidirectional communication.
+- Microservices architecture improves reliability and scalability by splitting responsibilities across multiple services.
+- Communication between services can be synchronous (HTTP) or asynchronous (WebSocket, message queues, SSE).
+
+
+
+/.........................................................................................................
+
+
